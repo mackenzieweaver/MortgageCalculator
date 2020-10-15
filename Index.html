@@ -13,83 +13,82 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- Favicon -->
-    <link rel="shortcut icon" href="jsImages/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <!--<link rel="shortcut icon" href="jsImages/favicon.ico" />-->
+    <!--<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <!-- Prism -->
-    <link href="prism.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">-->
+    <!--<link rel="manifest" href="/site.webmanifest">-->
+
+
 
 </head>
 
-<!-- Fizz Buzz Background Image -->
-<style>
-    body {
-        background-image: url('');
-        background-color: #cccccc;
-    }
-
-    .footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        height: 60px; /* Set the fixed height of the footer here */
-        line-height: 60px; /* Vertically center the text there */
-        background-color: #f5f5f5;
-    }
-</style>
 
 <body>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
-            <a class="navbar-brand" href="/Index.html">Fizz Buzz</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand" href="/Index.html">Mortgage Calculator</a>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/Index.html">
-                            Home
-                        </a>
+                        <a class="nav-link" href="/Index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Solve.html">Solve</a>
+                        <a class="nav-link" href="#">Solution</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Code.html">Code</a>
+                        <a class="nav-link" href="#">Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Github</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Danny</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Josh</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mack</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">YouTube</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-           
 
 
-            </div>
-        </section>
-
-        <hr />
-
-        <!-- Footer -->
-        <div id="footer">
-            <div class="col-lg-12 text-center bg-light text-dark">
-                <!-- Copyright -->
-                <p>Team 6 All rights reserved. Design: <a href="">Team 6</a></p>
-
+    <div class="container">
+        <div class="align-self-center">
+            <div class="row pt-10">
+                Loan Amount: <input type="number" id="loan" />
+                Term (months): <input type="number" id="term" />
+                Interest Rate: <input type="number" id="rate" />
+                <button onclick="Calculate(
+                    document.getElementById('loan').value,
+                    document.getElementById('term').value,
+                    document.getElementById('rate').value
+                )">
+                    Calculate
+                </button>
             </div>
         </div>
+    </div>
 
-        <!-- Bootstrap core JavaScript -->
-        <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-        <!-- Prism -->
-        <script src="prism.js"></script>
-
+    <!-- Bootstrap core JavaScript -->
+    <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Prism -->
+    <!--<script src="prism.js"></script>-->
+    <script src="Scripts/CustomJS.js"></script>
 </body>
 
 </html>
