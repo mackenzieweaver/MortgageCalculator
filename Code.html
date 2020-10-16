@@ -1,10 +1,138 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Mortgage Calculator</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Favicon -->
+    <link rel="icon" type="img/png" href="Assets/favicon.ico" />
+    <!-- Custom CSS -->
+    <link href="Content/styles.css" rel="stylesheet" />
+    <!-- Prism -->
+    <link href="prism.css" rel="stylesheet" />
 </head>
 <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="/Index.html">Mortgage Calculator</a>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Solve.html">Solution</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/mackenzieweaver/MortgageCalculator" target="_blank">Github</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">YouTube</a>
+                    </li>
+                    <li class="align-self-center">
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown">
+                                Portfolios
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="https://mdcarroll-portfolio.netlify.app/" target="_blank">Danny</a>
+                                <a class="dropdown-item" href="https://josh-scott-portfolio.netlify.app/" target="_blank">Josh</a>
+                                <a class="dropdown-item" href="https://mackenzie-weaver.netlify.app/" target="_blank">Mackenzie</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <pre>
+        <code class="language-js line-numbers">
+            // Calculate calls all other functions
+            function Calculate(loan, term, rate) {
+            loan = parseInt(loan.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
+            const table = document.getElementById("tbody");
+            // If there's already a table, remove it
+            while (table.firstChild) {
+            table.removeChild(table.firstChild);
+            }
+            // So money is rounded to 2 decimal places
+            let precision = 2;
+            // Total Principal = loan
+            document.getElementById("totalprincipal").innerHTML = `${accounting.formatMoney(loan)}`;
+            //Total Monthly Payment = (amount loaned) * (rate/1200) / (1 – (1 + rate/1200)(-Number of Months) )
+            //1.
+            let totalMonthlyPayment = (loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));
+            document.getElementById("monthlypayment").innerHTML = `${accounting.formatMoney(totalMonthlyPayment.toFixed(precision))}`;
+            // before the very first month equals the amount of the loan
+            //2.
+            let remainingBalance = loan;
+            // Interest starting at zero
+            let totalInterest = 0;
+
+            for (let i = 1; i <= term; i++) {
+            //3.
+            let interestPayment = remainingBalance * (rate / 1200);
+            totalInterest += interestPayment;
+            //4.
+            let principalPayment = totalMonthlyPayment - interestPayment;
+            //5. remainingBalance = remainingBalance - principalPayment
+            remainingBalance -= principalPayment;
+
+            // Create row in table
+            let row = table.insertRow();
+            row.setAttribute("scope", "row");
+            //the table has a Header, Tbody, Row, Cell, and TextNode
+            let cell = row.insertCell();
+            let text = document.createTextNode(i.toString());
+            cell.appendChild(text);
+            // Payment
+            cell = row.insertCell();
+            text = document.createTextNode(accounting.formatMoney(totalMonthlyPayment.toFixed(precision)));
+            cell.appendChild(text);
+            // Principal
+            cell = row.insertCell();
+            text = document.createTextNode(accounting.formatMoney(principalPayment.toFixed(precision)));
+            cell.appendChild(text);
+            // Interest
+            cell = row.insertCell();
+            text = document.createTextNode(accounting.formatMoney(interestPayment.toFixed(precision)));
+            cell.appendChild(text);
+            // Total Interest
+            cell = row.insertCell();
+            text = document.createTextNode(accounting.formatMoney(totalInterest.toFixed(precision)));
+            cell.appendChild(text);
+            // Balance
+            cell = row.insertCell();
+            text = document.createTextNode(accounting.formatMoney(remainingBalance.toFixed(precision)));
+            cell.appendChild(text);
+            }
+            let totalCost = parseInt(loan) + totalInterest;
+            document.getElementById("totalinterest").innerHTML = `${accounting.formatMoney(totalInterest.toFixed(precision))}`;
+            document.getElementById("totalcost").innerHTML = `${accounting.formatMoney(totalCost)}`;
+            }
+        </code>
+    </pre>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="Scripts/CustomJS.js"></script>
+    <script src="Scripts/accounting.min.js"></script>
+    <script src="Scripts/InputFormatting.js"></script>
+    <!-- Prism -->
+    <script src="prism.js"></script>
 </body>
+
 </html>

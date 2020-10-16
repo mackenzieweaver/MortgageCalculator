@@ -71,6 +71,8 @@
     <Content Include="Code.html" />
     <Content Include="Content\styles.css" />
     <Content Include="Index.html" />
+    <Content Include="prism.css" />
+    <Content Include="prism.js" />
     <Content Include="Scripts\accounting.min.js" />
     <Content Include="Scripts\CustomJS.js" />
     <Content Include="Scripts\InputFormatting.js" />
