@@ -1,4 +1,4 @@
-# Mortgage Calculator [LIVE](https://csw-mortgage.netlify.app/)
+# Mortgage Calculator
 ## by [Mackenzie Weaver](https://mackenzie-weaver.netlify.app/), [Josh Scott](https://josh-scott-portfolio.netlify.app/), and [Mark Danny Carroll](https://mdcarroll-portfolio.netlify.app/)
 
 <!-- TABLE OF CONTENTS -->
