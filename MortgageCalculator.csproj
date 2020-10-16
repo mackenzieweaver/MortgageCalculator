@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\favicon.ico" />
+    <Content Include="Content\styles.css" />
     <Content Include="Index.html" />
     <Content Include="Scripts\accounting.min.js" />
     <Content Include="Scripts\CustomJS.js" />
