@@ -62,7 +62,14 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-Mackenzie Weaver - [LinkedIn](www.linkedin.com/in/mackenzie-weaver) - macknz7@gmail.com
+Mackenzie Weaver
+[LinkedIn](www.linkedin.com/in/mackenzie-weaver) - macknz7@gmail.com
+
+Josh Scott
+[LinkedIn](www.linkedin.com/in/mackenzie-weaver) - macknz7@gmail.com
+
+Mark Danny Carroll
+[LinkedIn](www.linkedin.com/in/mackenzie-weaver) - macknz7@gmail.com
 
 Project Link: [Mortgage Page](https://csw-mortgage.netlify.app/)
 
