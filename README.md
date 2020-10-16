@@ -1,4 +1,4 @@
-# Mortgage Calculator 
+# Mortgage Calculator [Check out the LIVE site](https://csw-mortgage.netlify.app/)
 ## by [Mackenzie Weaver](https://mackenzie-weaver.netlify.app/), [Josh Scott](https://josh-scott-portfolio.netlify.app/), and [Mark Danny Carroll](https://mdcarroll-portfolio.netlify.app/)
 
 <!-- TABLE OF CONTENTS -->
@@ -22,3 +22,11 @@
 ## About The Project
 
 Individuals and businesses use mortgages to make large real estate purchases without paying the entire purchase price up front. With our mortgage calculator app you will be able to accurately predict what each of your monthly payments will be for the duration of your payment term.
+
+### Built With
+
+This app was built in visual studio using the .NET Framework Template but mostly leverages HTML, CSS, and Javascript. However the project also uses Bootstrap and jQuery.
+
+* [Bootstrap](https://getbootstrap.com)
+* [JQuery](https://jquery.com)
+* [Laravel](https://laravel.com)
