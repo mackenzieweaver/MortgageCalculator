@@ -60,7 +60,7 @@
                         Loan Amount:
                     </div>
                     <div class="col">
-                        <input type="number" id="loan" placeholder="$25,000" min="1" max="1000000" oninput="validity.valid||(value='');"/>
+                        <input type="text" id="loan" placeholder="$250,000" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" data-type="currency" />
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -147,5 +147,6 @@
     <!-- Custom JS -->
     <script src="Scripts/CustomJS.js"></script>
     <script src="Scripts/accounting.min.js"></script>
+    <script src="Scripts/InputFormatting.js"></script>
 </body>
 </html>
