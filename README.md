@@ -5,11 +5,9 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
-  * [Built With](#built-with)
+* [Built With](#built-with)
 * [Getting Started](#getting-started)
-  * [Installation](#installation)
-* [Usage](#usage)
-* [Roadmap](#roadmap)
+* [Installation](#installation)
 * [Contributing](#contributing)
 * [License](#license)
 * [Contact](#contact)
@@ -49,6 +47,17 @@ Clone the repo
 ```sh
 git clone https://github.com/mackenzieweaver/MortgageCalculator
 ```
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
