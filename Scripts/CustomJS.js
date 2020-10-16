@@ -1,5 +1,10 @@
 ﻿// Calculate calls all other functions
 function Calculate(loan, term, rate) {
+    const table = document.getElementById("tbody");
+    // If there's already a table, remove it
+    while (table.firstChild) {
+        table.removeChild(table.firstChild);
+    }
     // Total Principal = loan
     document.getElementById("totalprincipal").innerHTML = `${accounting.formatMoney(loan)}`;
     //Total Monthly Payment = (amount loaned) * (rate/1200) / (1 – (1 + rate/1200)(-Number of Months) )
@@ -8,7 +13,6 @@ function Calculate(loan, term, rate) {
     // before the very first month equals the amount of the loan
     let remainingBalance = loan;
     let totalInterest = 0;
-    const table = document.getElementById("tbody");
     for (let i = 1; i <= term; i++) {
         let interestPayment = remainingBalance * (rate / 1200);
         totalInterest += interestPayment;
