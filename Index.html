@@ -66,21 +66,49 @@
 
 
     <div class="container">
-        <div class="align-self-center">
-            <div class="row pt-10">
-                Loan Amount: <input type="number" id="loan" />
-                Term (months): <input type="number" id="term" />
-                Interest Rate: <input type="number" id="rate" />
-                <button onclick="Calculate(
-                    document.getElementById('loan').value,
-                    document.getElementById('term').value,
-                    document.getElementById('rate').value
-                )">
-                    Calculate
-                </button>
+        <div class="row mt-5">
+            <div class="col-4">
+                <div class="row mb-5">
+                    <div class="col-6">
+                        <div class="row">
+                            Loan Amount:
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <input type="number" id="loan" />
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-6">
+                        Term (months):
+                    </div>
+                    <div class="col-6">
+                        <input type="number" id="term" />
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-6">
+                        Interest Rate:
+                    </div>
+                    <div class="col-6">
+                        <input type="number" id="rate" />
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-6">
+                        <button onclick="Calculate(
+                            document.getElementById('loan').value,
+                            document.getElementById('term').value,
+                            document.getElementById('rate').value)">
+                            Calculate
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
