@@ -68,7 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\favicon.ico" />
-    <Content Include="Assets\HomeLoan.png" />
+    <Content Include="Assets\HomeLoanLeft.png" />
+    <Content Include="Assets\HomeLoanRight.png" />
     <Content Include="Code.html" />
     <Content Include="Content\styles.css" />
     <Content Include="Index.html" />

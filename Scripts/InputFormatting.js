@@ -1,5 +1,4 @@
 ﻿// Jquery Dependency
-
 $("input[data-type='currency']").on({
     keyup: function () {
         formatCurrency($(this));
@@ -9,12 +8,10 @@ $("input[data-type='currency']").on({
     }
 });
 
-
 function formatNumber(n) {
     // format number 1000000 to 1,234,567
     return n.replace(/\D/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }
-
 
 function formatCurrency(input, blur) {
     // appends $ to value, validates decimal side
@@ -79,6 +76,51 @@ function formatCurrency(input, blur) {
 
     // put caret back in the right position
     var updated_len = input_val.length;
+    caret_pos = updated_len - original_len + caret_pos;
+    input[0].setSelectionRange(caret_pos, caret_pos);
+}
+
+function formatRate(r) {
+    //format interest rate from 2 to 2.0
+    //get input rate value
+    var input_rate = input.rate();
+
+    // do not validate empty input
+    if (input_rate === "") { return; }
+
+    // check for decimal
+    if (input_rate.indexOf(".") >= 0) {
+
+        var decimal_pos = input_rate.indexOf(".")
+
+        // split number by decimal point
+        var left_rate = input_rate.substring(0, decimal_pos);
+        var right_rate = input_rate.substring(decimal_pos);
+
+        //  left side of rate
+        left_rate = formatRate(left_rate);
+
+        // right side of rate
+        right_rate = formatRate(right_rate);
+
+        // Limit decimal to only 3 digits
+        right_rate = right_rate.substring(0, 3);
+
+    } else {
+        // no decimal entered
+        // remove all non-digits
+        input_rate = formatRate(input_rate);
+
+        // final formatting
+        //if (blur === "blur") {
+        //    input_rate += ".00";
+        //}
+    }
+    // send updated string to input
+    input.rate(input_rate);
+
+    // put caret back in the right position
+    var updated_len = input_rate.length;
     caret_pos = updated_len - original_len + caret_pos;
     input[0].setSelectionRange(caret_pos, caret_pos);
 }
