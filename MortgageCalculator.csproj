@@ -67,9 +67,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\favicon.ico" />
     <Content Include="Assets\HomeLoanLeft.png" />
     <Content Include="Assets\HomeLoanRight.png" />
+    <Content Include="Assets\Team 6 Favicon Black.ico" />
+    <Content Include="Assets\Team 6 Favicon Gold.ico" />
+    <Content Include="Assets\Team 6 Logo.png" />
     <Content Include="Code.html" />
     <Content Include="Content\styles.css" />
     <Content Include="Index.html" />
