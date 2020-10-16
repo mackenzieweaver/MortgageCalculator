@@ -7,7 +7,6 @@
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
-  * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
 * [Roadmap](#roadmap)
@@ -37,6 +36,19 @@ This app was built in visual studio using the .NET Framework Template but mostly
 * [HTML](https://www.w3schools.com/html/)[ / CSS](https://www.w3schools.com/css/)[ / Javascript](https://www.w3schools.com/js/DEFAULT.asp)
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
+
+### Installation
+
+Clone the repo
+```sh
+git clone https://github.com/your_username_/Project-Name.git
+```
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
