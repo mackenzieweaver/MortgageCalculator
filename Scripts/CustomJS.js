@@ -11,7 +11,7 @@ function Calculate(loan, term, rate) {
     document.getElementById("totalprincipal").innerHTML = `${accounting.formatMoney(loan)}`;
     //Total Monthly Payment = (amount loaned) * (rate/1200) / (1 – (1 + rate/1200)(-Number of Months) )
     let totalMonthlyPayment = (loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));
-    document.getElementById("monthlypayment").innerHTML = `${accounting.formatMoney(totalMonthlyPayment.toFixed(2))}`;
+    document.getElementById("monthlypayment").innerHTML = `${accounting.formatMoney(totalMonthlyPayment.toFixed(precision))}`;
     // before the very first month equals the amount of the loan
     let remainingBalance = loan;
     let totalInterest = 0;
