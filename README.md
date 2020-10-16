@@ -25,6 +25,11 @@
 
 Individuals and businesses use mortgages to make large real estate purchases without paying the entire purchase price up front. With our mortgage calculator app you will be able to accurately predict what each of your monthly payments will be for the duration of your payment term.
 
+Here's why you should use our app
+* It's free and no sign up required
+* It's simple and intuitive
+* It's lightning fast
+
 ### Built With
 
 This app was built in visual studio using the .NET Framework Template but mostly leverages HTML, CSS, and Javascript. However the project also uses Bootstrap and jQuery.
