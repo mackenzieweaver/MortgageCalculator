@@ -14,8 +14,6 @@
 
 ## About The Project
 
-
-
 <!-- Hero Image -->
 [![Mortgage Solution Page](https://github.com/mackenzieweaver/MortgageCalculator/blob/main/cswmortgage.png)](https://csw-mortgage.netlify.app/)
 
@@ -37,8 +35,11 @@ This app was built in visual studio using the .NET Framework Template but mostly
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Just clone the repo and run it. 
+The js libraries that you'll need are already in the project like
+  * Bootstrap
+  * accounting.js
+  * Currency Formatting
 
 ### Installation
 
