@@ -44,3 +44,4 @@ This app was built in visual studio using the .NET Framework Template but mostly
 * [Best READme Template](https://github.com/othneildrew/Best-README-Template)
 * [accounting.js](http://openexchangerates.github.io/accounting.js/)
 * [Currency Format Input Field](https://codepen.io/559wade/pen/LRzEjj?editors=1010)
+* [Coder Foundry Mortgage Challenge](https://github.com/mackenzieweaver/MortgageCalculator/blob/main/Coding%20Challenge%20-%20Mortgage%20Loan%20Calculator.pdf)
