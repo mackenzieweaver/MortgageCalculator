@@ -34,7 +34,7 @@ Here's why you should use our app
 
 This app was built in visual studio using the .NET Framework Template but mostly leverages HTML, CSS, and Javascript. However the project also uses Bootstrap and jQuery.
 
-* [HTML](https://www.w3schools.com/html/)[CSS](https://www.w3schools.com/css/)[Javascript](https://www.w3schools.com/js/DEFAULT.asp)
+* [HTML](https://www.w3schools.com/html/)[ / CSS](https://www.w3schools.com/css/)[ / Javascript](https://www.w3schools.com/js/DEFAULT.asp)
 * [Bootstrap](https://getbootstrap.com)
 * [JQuery](https://jquery.com)
 
