@@ -71,7 +71,7 @@ josh@scott.com
 Mark Danny Carroll
 md@carroll.com
 
-Project Link: [Mortgage Page](https://csw-mortgage.netlify.app/)
+Project Link: [CSW Mortgage](https://csw-mortgage.netlify.app/)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
