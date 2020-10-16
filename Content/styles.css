@@ -1,7 +1,38 @@
-﻿input {
+﻿/*set css variable*/
+/*--main-color: black;*/
+
+/*access css variable*/
+/*var(--main-color);*/
+:root {
+    --main-color: #261F06;
+    --sec-color: #5C4A0F;
+}
+
+nav {
+    background-color: var(--main-color);
+    color: white;
+}
+
+input {
     width: 100%;
 }
 
 #dropdownMenuButton {
     color: #949d9a;
 }
+
+/*thead {
+    background-color: var(--main-color);
+    color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: var(--main-color);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: var(--sec-color);
+    color: white;
+}
+*/
