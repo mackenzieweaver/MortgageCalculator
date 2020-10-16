@@ -1,16 +1,28 @@
 ﻿/*set css variable*/
 /*--main-color: black;*/
-
 /*access css variable*/
 /*var(--main-color);*/
 :root {
-    --main-color: #261F06;
-    --sec-color: #5C4A0F;
+    /* Dark gray (almost black) */
+    --main-color: #222;
+    /* Gold */
+    --sec-color: #ffc107;
+    /* White */
+    --ter-color: #fff;
+}
+
+body {
+    background-color: var(--main-color);
+    color: white;
 }
 
 nav {
-    background-color: var(--main-color);
-    color: white;
+    background-color: #ffc107;
+    color: var(--main-color);
+}
+
+.navbar-brand, .nav-link {
+    color: black;
 }
 
 input {
@@ -24,15 +36,36 @@ input {
 /*thead {
     background-color: var(--main-color);
     color: white;
+}*/
+
+/*tr:nth-child(odd) {*/
+    /*background-color: var(--main-color);*/
+    /*color: white;
 }
 
-tr:nth-child(odd) {
+tr:nth-child(even) {*/
+    /*background-color: var(--sec-color);*/
+    /*color: var(--sec-color);
+}*/
+
+thead {
+    background-color: var(--main-color);
+    color: white;
+}
+#tbody > tr {
     background-color: var(--main-color);
     color: white;
 }
 
-tr:nth-child(even) {
-    background-color: var(--sec-color);
-    color: white;
+
+#inputs, #outputs {
+    border: 1px solid var(--sec-color);
 }
-*/
+
+/*table.table {
+    outline: 1px solid var(--sec-color);
+}*/
+
+table.table > thead > tr > th, table.table > tbody > tr > th {
+    border-bottom: 1px solid var(--sec-color);
+}
