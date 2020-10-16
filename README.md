@@ -59,6 +59,13 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
+<!-- CONTACT -->
+## Contact
+
+Mackenzie Weaver - [LinkedIn](www.linkedin.com/in/mackenzie-weaver) - macknz7@gmail.com
+
+Project Link: [Mortgage Page](https://csw-mortgage.netlify.app/)
+
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 * [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
