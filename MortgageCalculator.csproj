@@ -72,7 +72,7 @@
     <Content Include="Index.html" />
     <Content Include="Scripts\accounting.min.js" />
     <Content Include="Scripts\CustomJS.js" />
-    <Content Include="Solve.html" />
+    <Content Include="Scripts\InputFormatting.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

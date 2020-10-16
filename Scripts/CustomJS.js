@@ -1,5 +1,6 @@
 ﻿// Calculate calls all other functions
 function Calculate(loan, term, rate) {
+    loan = parseInt(loan.replace(/$/, '').replace(/,/g, '').replace(/./, ''));    
     const table = document.getElementById("tbody");
     // If there's already a table, remove it
     while (table.firstChild) {
