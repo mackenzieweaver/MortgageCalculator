@@ -1,4 +1,4 @@
-# Mortgage Calculator [Check out the LIVE site](https://csw-mortgage.netlify.app/)
+# Mortgage Calculator [LIVE](https://csw-mortgage.netlify.app/)
 ## by [Mackenzie Weaver](https://mackenzie-weaver.netlify.app/), [Josh Scott](https://josh-scott-portfolio.netlify.app/), and [Mark Danny Carroll](https://mdcarroll-portfolio.netlify.app/)
 
 <!-- TABLE OF CONTENTS -->
