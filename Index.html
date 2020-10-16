@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- Favicon -->
     <link rel="icon" type="img/png" href="Assets/favicon.ico" />
+    <!-- Custom CSS -->
+    <link href="Content/styles.css" rel="stylesheet" />
 </head>
 <body>
     <!-- Navigation -->
@@ -55,7 +57,7 @@
                         Loan Amount:
                     </div>
                     <div class="col">
-                        <input type="number" id="loan" placeholder="$25,000" />
+                        <input type="number" id="loan" placeholder="$25,000" min="1" max="1000000" oninput="validity.valid||(value='');"/>
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -63,7 +65,7 @@
                         Term (months):
                     </div>
                     <div class="col">
-                        <input type="number" id="term" placeholder="60" />
+                        <input type="number" id="term" placeholder="60" min="1" max="360" oninput="validity.valid||(value='');"/>
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -71,7 +73,7 @@
                         Interest Rate:
                     </div>
                     <div class="col">
-                        <input type="number" id="rate" placeholder="5" />
+                        <input type="number" id="rate" placeholder="5" min="1" max="10" oninput="validity.valid||(value='');"/>
                     </div>
                 </div>
                 <div class="row mt-5 mr-4 mb-3 pt-5 justify-content-end">
