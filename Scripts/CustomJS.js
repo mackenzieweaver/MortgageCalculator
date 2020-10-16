@@ -10,20 +10,28 @@ function Calculate(loan, term, rate) {
     // Total Principal = loan
     document.getElementById("totalprincipal").innerHTML = `${accounting.formatMoney(loan)}`;
     //Total Monthly Payment = (amount loaned) * (rate/1200) / (1 – (1 + rate/1200)(-Number of Months) )
+    //1.
     let totalMonthlyPayment = (loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));
     document.getElementById("monthlypayment").innerHTML = `${accounting.formatMoney(totalMonthlyPayment.toFixed(precision))}`;
     // before the very first month equals the amount of the loan
+    //2.
     let remainingBalance = loan;
+    // Interest starting at zero 
     let totalInterest = 0;
+
     for (let i = 1; i <= term; i++) {
+    //3.
         let interestPayment = remainingBalance * (rate / 1200);
         totalInterest += interestPayment;
+    //4.
         let principalPayment = totalMonthlyPayment - interestPayment;
+    //5. remainingBalance = remainingBalance - principalPayment
         remainingBalance -= principalPayment;
 
         // Create row in table
         let row = table.insertRow();
         row.setAttribute("scope", "row");
+        //the table has a Header, Tbody, Row, Cell, and TextNode
         let cell = row.insertCell();
         let text = document.createTextNode(i.toString());
         cell.appendChild(text);
