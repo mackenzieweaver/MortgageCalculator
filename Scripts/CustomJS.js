@@ -1,5 +1,7 @@
 ﻿// Calculate calls all other functions
 function Calculate(loan, term, rate) {
+    // Rate includes decimal
+    rate = parseFloat(rate);
     loan = parseInt(loan.replace(/$/, '').replace(/,/g, '').replace(/./, ''));    
     const table = document.getElementById("tbody");
     // If there's already a table, remove it
@@ -11,24 +13,22 @@ function Calculate(loan, term, rate) {
     // Total Principal = loan
     document.getElementById("totalprincipal").innerHTML = `${accounting.formatMoney(loan)}`;
     //Total Monthly Payment = (amount loaned) * (rate/1200) / (1 – (1 + rate/1200)(-Number of Months) )
-    //1.
+    // Equation 1
     let totalMonthlyPayment = (loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));
     document.getElementById("monthlypayment").innerHTML = `${accounting.formatMoney(totalMonthlyPayment.toFixed(precision))}`;
     // before the very first month equals the amount of the loan
-    //2.
+    // Equation 2
     let remainingBalance = loan;
     // Interest starting at zero 
     let totalInterest = 0;
-
     for (let i = 1; i <= term; i++) {
-    //3.
+        //Equation 3
         let interestPayment = remainingBalance * (rate / 1200);
         totalInterest += interestPayment;
-    //4.
+        //Equation 4
         let principalPayment = totalMonthlyPayment - interestPayment;
-    //5. remainingBalance = remainingBalance - principalPayment
+        //Equation 5 remainingBalance = remainingBalance - principalPayment
         remainingBalance -= principalPayment;
-
         // Create row in table
         let row = table.insertRow();
         row.setAttribute("scope", "row");
@@ -60,4 +60,12 @@ function Calculate(loan, term, rate) {
     let totalCost = parseInt(loan) + totalInterest;
     document.getElementById("totalinterest").innerHTML = `${accounting.formatMoney(totalInterest.toFixed(precision))}`;
     document.getElementById("totalcost").innerHTML = `${accounting.formatMoney(totalCost)}`;
+}
+// Rate accepts decimals up to 3 places
+function validateRate(rate) {
+    if (rate.length > 5) {
+        rate = rate.split('');
+        rate.splice(5, rate.length - 5);
+        document.getElementById("rate").value = rate.join('');
+    }
 }
