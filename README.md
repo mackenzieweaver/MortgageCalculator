@@ -9,7 +9,6 @@
 * [Getting Started](#getting-started)
 * [Installation](#installation)
 * [Contributing](#contributing)
-* [License](#license)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
