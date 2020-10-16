@@ -32,12 +32,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="https://github.com/mackenzieweaver/MortgageCalculator" target="_blank">Github</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">YouTube</a>
-                    </li>
                     <li class="align-self-center">
                         <div class="dropdown">
                             <a class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown">
@@ -56,7 +50,7 @@
     </nav>
     <div class="container">
         <div class="row mt-5">
-            <div class="col-5 mr-3 border border-dark">
+            <div id="inputs" class="col-5 mr-3">
                 <div class="row mb-3 mt-5">
                     <div class="col">
                         Loan Amount:
@@ -78,16 +72,16 @@
                         Interest Rate:
                     </div>
                     <div class="col">
-                        <input type="number" id="rate" placeholder="5" min="1" max="10" oninput="validity.valid||(value='');" />
+                        <input type="text" id="rate" placeholder="3.45" oninput="validateRate(this.value)"/>
                     </div>
                 </div>
                 <div class="row mt-5 mr-4 mb-3 pt-5 justify-content-end">
-                    <button class="mt-5" onclick="Calculate(document.getElementById('loan').value,document.getElementById('term').value,document.getElementById('rate').value)">
+                    <button class="mt-5 btn btn-warning" onclick="Calculate(document.getElementById('loan').value,document.getElementById('term').value,document.getElementById('rate').value)">
                         Calculate
                     </button>
                 </div>
             </div>
-            <div class="col border border-dark">
+            <div id="outputs" class="col">
                 <div class="row justify-content-center">
                     <h1 class="mt-5">Your Monthly Payments</h1>
                 </div>
@@ -127,7 +121,7 @@
             </div>
         </div>
         <div class="row mt-5">
-            <table class="table table-dark table-striped">
+            <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">Month</th>
