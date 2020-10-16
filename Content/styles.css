@@ -1,3 +1,7 @@
 ﻿input {
     width: 100%;
 }
+
+#dropdownMenuButton {
+    color: #949d9a;
+}
