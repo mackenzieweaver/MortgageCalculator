@@ -35,7 +35,7 @@ input {
 
 #inputs, #outputs {
     /*border: 1px solid var(--sec-color);*/
-    box-shadow: 0 0 14px 0px rgba(206, 169, 53, 0.25);
+    box-shadow: 0 0 16px 0px rgba(206, 169, 53, 0.25);
     background-color: #343a40;
     border: 1px solid rgba(255,255,255,0.25);
     border-radius: 5px;
