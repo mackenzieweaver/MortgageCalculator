@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="Content/styles.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/8b5ae67e5c.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -58,25 +60,25 @@
     <!-- Page Content -->
     <div class="container">
         <div class="row">
-            <div class="col-md-8 mb-5">
+            <div class="col-12 mb-5">
                 <h2>Formulas Used</h2>
                 <hr>
                 <p>1.) Total Monthly Payment = (amount loaned) * (rate/1200) / (1 – (1 + rate/1200)(-Number of Months))</p>
-                <h6>let totalMonthlyPayment = (loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));</h6>
+                <h6><code>let totalMonthlyPayment = (loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));</code></h6>
                 <br />
                 <p>2.) Remaining Balance before the very first month equals the amount of the loan.</p>
-                <h6>let remainingBalance = loan;</h6>
-                <h6>let totalInterest = 0;</h6>
+                <h6><code>let remainingBalance = loan;</code></h6>
+                <h6><code>let totalInterest = 0;</code></h6>
                 <br />
                 <p>3.) Interest Payment = Previous Remaining Balance * rate/1200</p>
-                <h6>let interestPayment = remainingBalance * (rate / 1200);</h6>
+                <h6><code>let interestPayment = remainingBalance * (rate / 1200);</code></h6>
                 <br />
                 <p>4.) Principal Payment = Total Monthly Payment - Interest Payment</p>
-                <h6>let principalPayment = totalMonthlyPayment - interestPayment;</h6>
+                <h6><code>let principalPayment = totalMonthlyPayment - interestPayment;</code></h6>
                 <br />
                 <p>5.) At end each month, Remaining Balance = Previous Remaining Balance - principal payments</p>
-                <h6>remainingBalance -= principalPayment;</h6>
-                <a class="btn btn-warning btn-lg" href="#">Try it! &raquo;</a>
+                <h6><code>remainingBalance -= principalPayment;</code></h6>
+                <a class="btn btn-warning btn-lg mt-4" href="Solve.html">Solution &raquo;</a>
             </div>
         </div>
         <!-- /.row -->
@@ -117,52 +119,29 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12">
-                <strong>Mark Danny Carroll</strong>
-                <address>
-                    <abbr title="LinkedIn">in:</abbr>
-                    <a href="linkedin.com/in/mark-danny-carroll">LinkedIn</a>
-                    <br>
-                </address>
-                <strong>Josh Scott</strong>
-                <address>
-                    <abbr title="LinkedIn">in:</abbr>
-                    <a href="https://www.linkedin.com/in/joshgreatscott/">LinkedIn</a>
-                    <br>
-                </address>
-                <strong>Mackenzie Weaver</strong>
-                <address>
-                    <abbr title="LinkedIn">in:</abbr>
-                    <a href="https://www.linkedin.com/in/mackenzie-weaver/">LinkedIn</a>
-                    <address>
-                        <strong>Start Bootstrap</strong>
-                        <br>3481 Melrose Place
-                        <br>Beverly Hills, CA 90210
-                        <br>
-                    </address>
-                    <address>
-                        <abbr title="Phone">P:</abbr>
-                        (123) 456-7890
-                        <br>
-                        <abbr title="Email">E:</abbr>
-                        <a href="mailto:#">name@example.com</a>
-                    </address>
-                </address>
+            <div class="col ml-5">
+                <p><strong>Mark Danny Carroll</strong> - Designer</p>
+                <a class="contactlink" href="https://www.linkedin.com/in/mark-danny-carroll/">linkedin.com/in/mark-danny-carroll/</a>
+            </div>
+            <div class="col ml-5">
+                <p><strong>Josh Scott</strong> - Lead Programmer</p>
+                <a class="contactlink" href="https://www.linkedin.com/in/joshgreatscott/">linkedin.com/in/joshgreatscott/</a>
+            </div>
+            <div class="col">
+                <p><strong>Mackenzie Weaver</strong> - Project Manager</p>
+                <a class="contactlink" href="https://www.linkedin.com/in/mackenzie-weaver/">linkedin.com/in/mackenzie-weaver</a>
             </div>
         </div>
     </div>
-    <!-- /.container -->
     <!-- Footer -->
     <footer class="py-5 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+            <p class="m-0 text-center text-white">Copyright &copy; CSW Mortgage 2020</p>
         </div>
-        <!-- /.container -->
     </footer>
     <!-- Bootstrap core JavaScript -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 </body>
-
 </html>

@@ -56,3 +56,19 @@ input {
 .card-text {
     color: black;
 }
+
+hr {
+    border-top: 1px solid rgba(242,177,45,.9);
+}
+
+code {    
+    color: rgba(242,177,45,.9);
+}
+
+.contactlink {
+    color: rgba(242,177,45,.9);
+}
+
+.contactlink:hover {
+    color: rgba(242,177,45,.5);
+}
