@@ -1,8 +1,10 @@
 ﻿// Calculate calls all other functions
-function Calculate(loan, term, rate) {
+function Calculate(loan, term, rate, down, price) {
     // Rate includes decimal
     rate = parseFloat(rate);
     loan = parseInt(loan.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
+    down = parseInt(down.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
+    price = parseInt(price.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
     const table = document.getElementById("tbody");
     
     if (isNaN(loan)) {
@@ -25,7 +27,8 @@ function Calculate(loan, term, rate) {
     } else {
         //Total Monthly Payment = (amount loaned) * (rate/1200) / (1 – (1 + rate/1200)(-Number of Months) )
         // Equation 1
-        totalMonthlyPayment = (loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));
+        totalMonthlyPayment = ((loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));
+        
     }
     
     document.getElementById("monthlypayment").innerHTML = `${accounting.formatMoney(totalMonthlyPayment.toFixed(precision))}`;
@@ -97,7 +100,9 @@ function validateRate(rate) {
 
 //Reset button
 function Reset() {
-    document.getElementById("loan").value = "$100,000";
+    document.getElementById("price").value = "$200,000";
+    document.getElementById("down").value = "$50,000";
+    document.getElementById("loan").value = "$150,000";
     document.getElementById("rate").value = "3.92";
     document.getElementById("term").value = "360";
     document.getElementById("monthlypayment").innerText = "$0.00";
@@ -110,4 +115,8 @@ function Reset() {
     while (table.firstChild) {
         table.removeChild(table.firstChild);
     }
+}
+
+function SetLoan(price, down) {
+    loan = price - down;
 }
