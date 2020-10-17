@@ -16,8 +16,8 @@ body {
     color: white;
 }
 
-nav {
-    background-color: #ffc107;
+#mynav {
+    background-color: #343a40 !important;
     color: var(--main-color);
 }
 
@@ -33,39 +33,14 @@ input {
     color: #949d9a;
 }
 
-/*thead {
-    background-color: var(--main-color);
-    color: white;
-}*/
-
-/*tr:nth-child(odd) {*/
-    /*background-color: var(--main-color);*/
-    /*color: white;
-}
-
-tr:nth-child(even) {*/
-    /*background-color: var(--sec-color);*/
-    /*color: var(--sec-color);
-}*/
-
-thead {
-    background-color: var(--main-color);
-    color: white;
-}
-#tbody > tr {
-    background-color: var(--main-color);
-    color: white;
-}
-
-
 #inputs, #outputs {
-    border: 1px solid var(--sec-color);
+    /*border: 1px solid var(--sec-color);*/
+    box-shadow: 0 0 14px 0px rgba(206, 169, 53, 0.25);
+    background-color: #343a40;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 5px;
 }
 
-/*table.table {
-    outline: 1px solid var(--sec-color);
-}*/
-
-table.table > thead > tr > th, table.table > tbody > tr > th {
-    border-bottom: 1px solid var(--sec-color);
+.table-dark td, .table-dark th, .table-dark thead th {
+    border-bottom: solid 1px rgba(206,169,53,.5)!important;
 }
