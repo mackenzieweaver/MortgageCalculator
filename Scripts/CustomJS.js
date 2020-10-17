@@ -61,11 +61,23 @@ function Calculate(loan, term, rate) {
     document.getElementById("totalinterest").innerHTML = `${accounting.formatMoney(totalInterest.toFixed(precision))}`;
     document.getElementById("totalcost").innerHTML = `${accounting.formatMoney(totalCost)}`;
 }
+
 // Rate accepts decimals up to 3 places
 function validateRate(rate) {
-    if (rate.length > 5) {
+    let char = rate.charAt(rate.length - 1);
+    if (char == '.') {
         rate = rate.split('');
-        rate.splice(5, rate.length - 5);
-        document.getElementById("rate").value = rate.join('');
+        rate.splice(rate.length - 1, 1);
+        if (rate.indexOf(char) < 0) {
+            rate.splice(rate.length, 0, char);
+        }
+        rate = rate.join('');
+        document.getElementById("rate").value = rate;
+    }
+    if ((isNaN(parseInt(char)) && char != '.') || rate.length > 5) {
+        rate = rate.split('');
+        rate.splice(rate.length - 1, 1);
+        rate = rate.join('');
+        document.getElementById("rate").value = rate;
     }
 }
