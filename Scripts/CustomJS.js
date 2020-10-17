@@ -100,6 +100,11 @@ function Reset() {
     document.getElementById("loan").value = "$100,000";
     document.getElementById("rate").value = "3.92";
     document.getElementById("term").value = "360";
+    document.getElementById("monthlypayment").innerText = "$0.00";
+    document.getElementById("totalprincipal").innerText  = "$0.00";
+    document.getElementById("totalinterest").innerText  = "$0.00";
+    document.getElementById("totalcost").innerText  = "$0.00";
+
     let table = document.getElementById("tbody");
     // If there's already a table, remove it
     while (table.firstChild) {
