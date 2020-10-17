@@ -74,7 +74,8 @@
     <Content Include="Assets\Team 6 Logo.png" />
     <Content Include="Code.html" />
     <Content Include="Content\styles.css" />
-    <Content Include="Index.html" />
+    <Content Include="Index2.html" />
+    <Content Include="Index1.html" />
     <Content Include="prism.css" />
     <Content Include="prism.js" />
     <Content Include="Scripts\accounting.min.js" />
