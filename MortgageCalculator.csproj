@@ -67,8 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\HomeLoanLeft.png" />
-    <Content Include="Assets\HomeLoanRight.png" />
+    <Content Include="Assets\Car Card.svg" />
+    <Content Include="Assets\House Card.svg" />
+    <Content Include="Assets\Motorcycle Card.svg" />
     <Content Include="Assets\Team 6 Favicon Black.ico" />
     <Content Include="Assets\Team 6 Favicon Gold.ico" />
     <Content Include="Assets\Team 6 Logo.png" />
