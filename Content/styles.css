@@ -6,7 +6,7 @@
     /* Dark gray (almost black) */
     --main-color: #222;
     /* Gold */
-    --sec-color: #f2b12d;
+    --sec-color: #ffc107;
     /* White */
     --ter-color: #fff;
 }
@@ -25,6 +25,7 @@ body {
     color: black;
 }
 
+<<<<<<< HEAD
 header {
     background-color: rgba(242,177,45, 1.0);
 }
@@ -37,6 +38,8 @@ header {
     color: rgba(0,0,0,.9) !important;
 }
 
+=======
+>>>>>>> parent of fd1eefe... Major: Home Page Design Update
 input {
     width: 100%;
 }
@@ -55,12 +58,4 @@ input {
 
 .table-dark td, .table-dark th, .table-dark thead th {
     border-bottom: solid 1px rgba(206,169,53,.5)!important;
-}
-
-code {
-    color: var(--sec-color);
-}
-
-hr {
-    border-top: 1px solid rgba(255,255,255,.5);
 }
