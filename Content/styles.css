@@ -25,11 +25,11 @@ header {
     background-color: rgba(242,177,45, 1.0) !important;
 }
 
-#indexh1, #solveh1 {
+.display-4 {
     color: black !important;
 }
 
-#indexp, #solvep {
+.lead {
     color: rgba(0,0,0,.9) !important;
 }
 
