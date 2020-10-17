@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Car Card.svg" />
+    <Content Include="Assets\favicon.ico" />
     <Content Include="Assets\House Card.svg" />
     <Content Include="Assets\Motorcycle Card.svg" />
     <Content Include="Assets\Team 6 Favicon Black.ico" />
