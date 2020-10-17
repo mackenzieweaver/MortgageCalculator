@@ -41,12 +41,16 @@ input {
     color: #949d9a;
 }
 
-#inputs, #outputs {
+#inputs, #outputs, .card {
     /*border: 1px solid var(--sec-color);*/
     box-shadow: 0 0 16px 0px rgba(206, 169, 53, 0.25);
     background-color: #343a40;
     border: 1px solid rgba(255,255,255,0.25);
     border-radius: 5px;
+}
+
+p.card-text {
+    color: white !important;
 }
 
 .table-dark td, .table-dark th, .table-dark thead th {
