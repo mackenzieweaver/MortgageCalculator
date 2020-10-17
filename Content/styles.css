@@ -6,13 +6,13 @@
     /* Dark gray (almost black) */
     --main-color: #222;
     /* Gold */
-    --sec-color: #f2b12d;
+    --sec-color: #ffc107;
     /* White */
     --ter-color: #fff;
 }
 
 body {
-    background-color: var(--main-color);
+    background-color: rgb(52,58,64);
     color: white;
 }
 
@@ -21,20 +21,16 @@ body {
     color: var(--main-color);
 }
 
-.navbar-brand, .nav-link {
-    color: black;
-}
-
 header {
-    background-color: rgba(242,177,45, 1.0);
+    background-color: rgba(242,177,45, 1.0) !important;
 }
 
-#indexh1 {
+#indexh1, #solveh1 {
     color: black !important;
 }
 
-#indexp {
-    color: rgba(0,0,0,.75) !important;
+#indexp, #solvep {
+    color: rgba(0,0,0,.9) !important;
 }
 
 input {
@@ -57,10 +53,6 @@ input {
     border-bottom: solid 1px rgba(206,169,53,.5)!important;
 }
 
-code {
-    color: var(--sec-color);
-}
-
-hr {
-    border-top: 1px solid rgba(255,255,255,.5);
+.card-text {
+    color: black;
 }
