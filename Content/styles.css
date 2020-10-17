@@ -12,7 +12,7 @@
 }
 
 body {
-    background-color: var(--main-color);
+    background-color: rgb(52,58,64);
     color: white;
 }
 
@@ -29,12 +29,12 @@ header {
     background-color: rgba(242,177,45, 1.0);
 }
 
-#indexh1 {
+#indexh1, #solveh1 {
     color: black !important;
 }
 
-#indexp {
-    color: rgba(0,0,0,.75) !important;
+#indexp, #solvep {
+    color: rgba(0,0,0,.9) !important;
 }
 
 input {
