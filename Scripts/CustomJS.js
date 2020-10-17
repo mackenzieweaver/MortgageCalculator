@@ -2,8 +2,12 @@
 function Calculate(loan, term, rate) {
     // Rate includes decimal
     rate = parseFloat(rate);
-    loan = parseInt(loan.replace(/$/, '').replace(/,/g, '').replace(/./, ''));    
+    loan = parseInt(loan.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
     const table = document.getElementById("tbody");
+    
+    if (isNaN(loan)) {
+        return;
+    }
     // If there's already a table, remove it
     while (table.firstChild) {
         table.removeChild(table.firstChild);
@@ -12,9 +16,18 @@ function Calculate(loan, term, rate) {
     let precision = 2;
     // Total Principal = loan
     document.getElementById("totalprincipal").innerHTML = `${accounting.formatMoney(loan)}`;
-    //Total Monthly Payment = (amount loaned) * (rate/1200) / (1 – (1 + rate/1200)(-Number of Months) )
-    // Equation 1
-    let totalMonthlyPayment = (loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));
+    console.log(rate);
+    console.log(typeof (rate));
+    let totalMonthlyPayment;
+    if (isNaN(rate)) {
+        rate = 0;
+        totalMonthlyPayment = loan / term;
+    } else {
+        //Total Monthly Payment = (amount loaned) * (rate/1200) / (1 – (1 + rate/1200)(-Number of Months) )
+        // Equation 1
+        totalMonthlyPayment = (loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));
+    }
+    
     document.getElementById("monthlypayment").innerHTML = `${accounting.formatMoney(totalMonthlyPayment.toFixed(precision))}`;
     // before the very first month equals the amount of the loan
     // Equation 2
@@ -79,5 +92,17 @@ function validateRate(rate) {
         rate.splice(rate.length - 1, 1);
         rate = rate.join('');
         document.getElementById("rate").value = rate;
+    }
+}
+
+//Reset button
+function Reset() {
+    document.getElementById("loan").value = "$100,000";
+    document.getElementById("rate").value = "3.92";
+    document.getElementById("term").value = "360";
+    let table = document.getElementById("tbody");
+    // If there's already a table, remove it
+    while (table.firstChild) {
+        table.removeChild(table.firstChild);
     }
 }
