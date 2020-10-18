@@ -55,7 +55,7 @@
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark static-top">
         <div class="container">
             <!-- Navbar brand -->
-            <a class="navbar-brand" href="#">CSW Loans</a>
+            <a class="navbar-brand" href="Index.html">CSW Loans</a>
             <!-- Collapse button -->
             <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
                     aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
@@ -89,7 +89,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-lg-12">
                     <h1 class="display-4 mt-5 mb-2">Code</h1>
-                    <p class="lead mb-5">This project was largely built using the fundamentals of website development which are HTML, CSS, and JavaScript. The code below is being highlighted using the javascript library prism.js.</p>
+                    <p class="lead mb-5">This project was largely built using the fundamentals of website development which are HTML, CSS, and JavaScript. Below you can find a brief explanation of how this program works since this is a scholistic project.</p>
                 </div>
             </div>
         </div>
@@ -97,118 +97,149 @@
     <div class="container">
         <div class="row">
             <div class="col text-center">
-<pre>
-<code class="language-js line-numbers">// Calculate calls all other functions
-function Calculate(loan, term, rate) {
-    // Rate includes decimal
-    rate = parseFloat(rate);
-    loan = parseInt(loan.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
-    const table = document.getElementById("tbody");
-    if (isNaN(loan)) {
-        return;
-    }
-    // If there's already a table, remove it
-    while (table.firstChild) {
-        table.removeChild(table.firstChild);
-    }
-    // So money is rounded to 2 decimal places
-    let precision = 2;
-    // Total Principal = loan
-    document.getElementById("totalprincipal").innerHTML = `${accounting.formatMoney(loan)}`;
-    console.log(rate);
-    console.log(typeof (rate));
-    let totalMonthlyPayment;
-    if (isNaN(rate)) {
-        rate = 0;
-        totalMonthlyPayment = loan / term;
-    } else {
-        //Total Monthly Payment = (amount loaned) * (rate/1200) / (1 – (1 + rate/1200)(-Number of Months) )
-        // Equation 1
-        totalMonthlyPayment = (loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));
-    }
-    document.getElementById("monthlypayment").innerHTML = `${accounting.formatMoney(totalMonthlyPayment.toFixed(precision))}`;
-    // before the very first month equals the amount of the loan
-    // Equation 2
-    let remainingBalance = loan;
-    // Interest starting at zero
-    let totalInterest = 0;
-    for (let i = 1; i <= term; i++) {
-        //Equation 3
-        let interestPayment = remainingBalance * (rate / 1200);
-        totalInterest += interestPayment;
-        //Equation 4
-        let principalPayment = totalMonthlyPayment - interestPayment;
-        //Equation 5 remainingBalance = remainingBalance - principalPayment
-        remainingBalance -= principalPayment;
-        // Create row in table
-        let row = table.insertRow();
-        row.setAttribute("scope", "row");
-        //the table has a Header, Tbody, Row, Cell, and TextNode
-        let cell = row.insertCell();
-        let text = document.createTextNode(i.toString());
-        cell.appendChild(text);
-        // Payment
-        cell = row.insertCell();
-        text = document.createTextNode(accounting.formatMoney(totalMonthlyPayment.toFixed(precision)));
-        cell.appendChild(text);
-        // Principal
-        cell = row.insertCell();
-        text = document.createTextNode(accounting.formatMoney(principalPayment.toFixed(precision)));
-        cell.appendChild(text);
-        // Interest
-        cell = row.insertCell();
-        text = document.createTextNode(accounting.formatMoney(interestPayment.toFixed(precision)));
-        cell.appendChild(text);
-        // Total Interest
-        cell = row.insertCell();
-        text = document.createTextNode(accounting.formatMoney(totalInterest.toFixed(precision)));
-        cell.appendChild(text);
-        // Balance
-        cell = row.insertCell();
-        text = document.createTextNode(accounting.formatMoney(remainingBalance.toFixed(precision)));
-        cell.appendChild(text);
-    }
-    let totalCost = parseInt(loan) + totalInterest;
-    document.getElementById("totalinterest").innerHTML = `${accounting.formatMoney(totalInterest.toFixed(precision))}`;
-    document.getElementById("totalcost").innerHTML = `${accounting.formatMoney(totalCost)}`;
-}
-// Rate accepts decimals up to 3 places
-function validateRate(rate) {
-    let char = rate.charAt(rate.length - 1);
-    if (char == '.') {
-    rate = rate.split('');
-    rate.splice(rate.length - 1, 1);
-    if (rate.indexOf(char) < 0) {
-    rate.splice(rate.length, 0, char);
-    }
-    rate = rate.join('');
-    document.getElementById("rate").value = rate;
-    }
-    if ((isNaN(parseInt(char)) && char != '.') || rate.length > 5) {
-    rate = rate.split('');
-    rate.splice(rate.length - 1, 1);
-    rate = rate.join('');
-    document.getElementById("rate").value = rate;
-    }
-}
-//Reset button
-function Reset() {
-    document.getElementById("loan").value = "$100,000";
-    document.getElementById("rate").value = "3.92";
-    document.getElementById("term").value = "360";
-    document.getElementById("monthlypayment").innerText = "$0.00";
-    document.getElementById("totalprincipal").innerText  = "$0.00";
-    document.getElementById("totalinterest").innerText  = "$0.00";
-    document.getElementById("totalcost").innerText  = "$0.00";
-    let table = document.getElementById("tbody");
-    // If there's already a table, remove it
-    while (table.firstChild) {
-    table.removeChild(table.firstChild);
-}</code>
-</pre>
+
+                <!--
+                <pre>
+                <code class="language-js line-numbers">// Calculate calls all other functions
+                function Calculate(loan, term, rate) {
+                    // Rate includes decimal
+                    rate = parseFloat(rate);
+                    loan = parseInt(loan.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
+                    const table = document.getElementById("tbody");
+                    if (isNaN(loan)) {
+                        return;
+                    }
+                    // If there's already a table, remove it
+                    while (table.firstChild) {
+                        table.removeChild(table.firstChild);
+                    }
+                    // So money is rounded to 2 decimal places
+                    let precision = 2;
+                    // Total Principal = loan
+                    document.getElementById("totalprincipal").innerHTML = `${accounting.formatMoney(loan)}`;
+                    console.log(rate);
+                    console.log(typeof (rate));
+                    let totalMonthlyPayment;
+                    if (isNaN(rate)) {
+                        rate = 0;
+                        totalMonthlyPayment = loan / term;
+                    } else {
+                        //Total Monthly Payment = (amount loaned) * (rate/1200) / (1 – (1 + rate/1200)(-Number of Months) )
+                        // Equation 1
+                        totalMonthlyPayment = (loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));
+                    }
+                    document.getElementById("monthlypayment").innerHTML = `${accounting.formatMoney(totalMonthlyPayment.toFixed(precision))}`;
+                    // before the very first month equals the amount of the loan
+                    // Equation 2
+                    let remainingBalance = loan;
+                    // Interest starting at zero
+                    let totalInterest = 0;
+                    for (let i = 1; i <= term; i++) {
+                        //Equation 3
+                        let interestPayment = remainingBalance * (rate / 1200);
+                        totalInterest += interestPayment;
+                        //Equation 4
+                        let principalPayment = totalMonthlyPayment - interestPayment;
+                        //Equation 5 remainingBalance = remainingBalance - principalPayment
+                        remainingBalance -= principalPayment;
+                        // Create row in table
+                        let row = table.insertRow();
+                        row.setAttribute("scope", "row");
+                        //the table has a Header, Tbody, Row, Cell, and TextNode
+                        let cell = row.insertCell();
+                        let text = document.createTextNode(i.toString());
+                        cell.appendChild(text);
+                        // Payment
+                        cell = row.insertCell();
+                        text = document.createTextNode(accounting.formatMoney(totalMonthlyPayment.toFixed(precision)));
+                        cell.appendChild(text);
+                        // Principal
+                        cell = row.insertCell();
+                        text = document.createTextNode(accounting.formatMoney(principalPayment.toFixed(precision)));
+                        cell.appendChild(text);
+                        // Interest
+                        cell = row.insertCell();
+                        text = document.createTextNode(accounting.formatMoney(interestPayment.toFixed(precision)));
+                        cell.appendChild(text);
+                        // Total Interest
+                        cell = row.insertCell();
+                        text = document.createTextNode(accounting.formatMoney(totalInterest.toFixed(precision)));
+                        cell.appendChild(text);
+                        // Balance
+                        cell = row.insertCell();
+                        text = document.createTextNode(accounting.formatMoney(remainingBalance.toFixed(precision)));
+                        cell.appendChild(text);
+                    }
+                    let totalCost = parseInt(loan) + totalInterest;
+                    document.getElementById("totalinterest").innerHTML = `${accounting.formatMoney(totalInterest.toFixed(precision))}`;
+                    document.getElementById("totalcost").innerHTML = `${accounting.formatMoney(totalCost)}`;
+                }
+                // Rate accepts decimals up to 3 places
+                function validateRate(rate) {
+                    let char = rate.charAt(rate.length - 1);
+                    if (char == '.') {
+                    rate = rate.split('');
+                    rate.splice(rate.length - 1, 1);
+                    if (rate.indexOf(char) < 0) {
+                    rate.splice(rate.length, 0, char);
+                    }
+                    rate = rate.join('');
+                    document.getElementById("rate").value = rate;
+                    }
+                    if ((isNaN(parseInt(char)) && char != '.') || rate.length > 5) {
+                    rate = rate.split('');
+                    rate.splice(rate.length - 1, 1);
+                    rate = rate.join('');
+                    document.getElementById("rate").value = rate;
+                    }
+                }
+                //Reset button
+                function Reset() {
+                    document.getElementById("loan").value = "$100,000";
+                    document.getElementById("rate").value = "3.92";
+                    document.getElementById("term").value = "360";
+                    document.getElementById("monthlypayment").innerText = "$0.00";
+                    document.getElementById("totalprincipal").innerText  = "$0.00";
+                    document.getElementById("totalinterest").innerText  = "$0.00";
+                    document.getElementById("totalcost").innerText  = "$0.00";
+                    let table = document.getElementById("tbody");
+                    // If there's already a table, remove it
+                    while (table.firstChild) {
+                    table.removeChild(table.firstChild);
+                }</code>
+                </pre>
+                                    -->
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12 mb-5">
+                <h2>Formulas Used</h2>
+                <hr class="mb-5">
+                <p>1.) Total Monthly Payment = (amount loaned) * (rate/1200) / (1 – (1 + rate/1200)(-Number of Months))</p>
+                <h6><code>let totalMonthlyPayment = (loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));</code></h6>
+                <br />
+                <p>2.) Remaining Balance before the very first month equals the amount of the loan.</p>
+                <h6><code>let remainingBalance = loan;</code></h6>
+                <br />
+                <p>3.) Interest Payment = Previous Remaining Balance * rate/1200</p>
+                <h6><code>let interestPayment = remainingBalance * (rate / 1200);</code></h6>
+                <br />
+                <p>4.) Principal Payment = Total Monthly Payment - Interest Payment</p>
+                <h6><code>let principalPayment = totalMonthlyPayment - interestPayment;</code></h6>
+                <br />
+                <p>5.) At end each month, Remaining Balance = Previous Remaining Balance - principal payments</p>
+                <h6><code>remainingBalance -= principalPayment;</code></h6>
             </div>
         </div>
     </div>
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="mb-0 pt-5 text-center text-white">Copyright &copy; CSW Loans 2020</p>
+        </div>
+    </footer>
     <!-- Bootstrap core JavaScript -->
     <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
