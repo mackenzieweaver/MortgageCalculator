@@ -16,8 +16,6 @@ function Calculate(loan, term, rate) {
     let precision = 2;
     // Total Principal = loan
     document.getElementById("totalprincipal").innerHTML = `${accounting.formatMoney(loan)}`;
-    console.log(rate);
-    console.log(typeof (rate));
     let totalMonthlyPayment;
     if (isNaN(rate)) {
         rate = 0;
@@ -75,6 +73,35 @@ function Calculate(loan, term, rate) {
     document.getElementById("totalcost").innerHTML = `${accounting.formatMoney(totalCost)}`;
 }
 
+function DownPayment(totalPrice, downPayment, loanAmount) {
+    // turn strings into numbers
+    totalPrice = parseInt(totalPrice.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
+    downPayment = parseInt(downPayment.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
+    loanAmount = parseInt(loanAmount.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
+    if (isNaN(totalPrice)) {
+        downPayment = 0;
+        downPayment = accounting.formatMoney(downPayment.toFixed(0));
+        downPayment = downPayment.split('').splice(0, downPayment.length - 3).join("");
+        document.getElementById("downPayment").value = `${downPayment}`;
+    }
+    if (totalPrice < downPayment) {
+        downPayment = Math.floor(totalPrice * 0.9);
+        downPayment = accounting.formatMoney(downPayment.toFixed(0));
+        downPayment = downPayment.split('').splice(0, downPayment.length - 3).join("");
+        document.getElementById("downPayment").value = `${downPayment}`;
+    }
+    if (isNaN(downPayment)) {
+        loanAmount = totalPrice;
+    } else {
+        // adjust loan amount
+        loanAmount = totalPrice - downPayment;
+    }
+    // Change Loan Amount Input Value
+    loanAmount = accounting.formatMoney(loanAmount.toFixed(0));
+    loanAmount = loanAmount.split('').splice(0, loanAmount.length-3).join("");
+    document.getElementById("loan").value = `${loanAmount}`;
+}
+
 // Rate accepts decimals up to 3 places
 function validateRate(rate) {
     let char = rate.charAt(rate.length - 1);
@@ -97,6 +124,8 @@ function validateRate(rate) {
 
 //Reset button
 function Reset() {
+    document.getElementById("totalPrice").value = "$125,000";
+    document.getElementById("downPayment").value = "$25,000";
     document.getElementById("loan").value = "$100,000";
     document.getElementById("rate").value = "3.92";
     document.getElementById("term").value = "360";

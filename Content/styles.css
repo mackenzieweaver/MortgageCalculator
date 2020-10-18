@@ -30,6 +30,11 @@ header {
     background-color: rgba(242,177,45, 1.0) !important;
 }
 
+#headertext {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
 .display-4 {
     color: black !important;
 }
@@ -48,6 +53,14 @@ input {
 
 #inputs {
     margin-right: 48px;
+}
+
+.inputoption {
+    background-color: rgb(62,68,74);
+    margin-right: 24px !important;
+    margin-left: 24px !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
 }
 
 .card:hover {
@@ -96,6 +109,12 @@ code {
 }
 
 @media only screen and (max-width: 1000px) {
+
+    #headertext {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+
     #contact {
         display: flex;
         flex-direction: column;
@@ -123,6 +142,10 @@ code {
 
     #inputs {
         margin-bottom: 48px;
+    }
+
+    #m1, #m2 {
+        margin-top: 0 !important;
     }
 
     h1 {

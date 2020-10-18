@@ -84,7 +84,7 @@
     <header class="py-5 mb-5">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
-                <div class="col-lg-12">
+                <div id="headertext" class="col-lg-12">
                     <h1 class="display-4 mt-5 mb-2">Solution</h1>
                     <p class="lead mb-5">We provide you with an example to use so that you can just click the "Calculate" button to generate an easy to read table. Optionally you can enter in any loan amount, interest rate, and term that you would like. Use the "reset" button to start over.</p>
                 </div>
@@ -94,7 +94,34 @@
     <div class="container">
         <div id="inout" class="row mt-5">
             <div id="inputs" class="col">
-                <div class="row mb-3 mt-5">
+                <div class="row">
+                    <div class="col">
+                        <div class="row mt-5 inputoption text-center">
+                            <div class="col ml-4 pt-3">
+                                <i>Optional:</i>
+                            </div>
+                        </div>
+                        <div class="row inputoption text-right">
+                            <div class="col ml-4">
+                                <i>Price</i>
+                            </div>
+                            <div class="col mr-4">
+                                <input type="text" id="totalPrice" value="$125,000" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" data-type="currency" oninput="DownPayment(this.value, document.getElementById('downPayment').value, document.getElementById('loan').value);" />
+                            </div>
+                        </div>
+                        <div class="row mb-3 inputoption text-right">
+                            <div class="col ml-4 pb-4">
+                                <i>Down</i>
+                            </div>
+                            <div class="col mr-4">
+                                <input type="text" id="downPayment" value="$25,000" pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$" data-type="currency"
+                                       oninput="DownPayment(document.getElementById('totalPrice').value, this.value, document.getElementById('loan').value);" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-4 mr-4 ml-4 mb-4" />
+                <div class="row mb-3">
                     <div class="col ml-4">
                         Loan Amount:
                     </div>
@@ -118,7 +145,7 @@
                         <input type="number" id="term" value="360" min="1" max="360" oninput="validity.valid||(value='');" />
                     </div>
                 </div>
-                <div id="cbp" class="row mt-5 mr-4 pt-5 justify-content-end">
+                <div id="cbp" class="row mr-4 justify-content-end">
                     <button id="calcbtn" class="mt-5 btn btn-warning" onclick="Calculate(document.getElementById('loan').value,document.getElementById('term').value,document.getElementById('rate').value)">
                         Calculate
                     </button>
@@ -130,39 +157,47 @@
                 </div>
             </div>
             <div id="outputs" class="col">
-                <div class="row justify-content-center">
-                    <h1 class="mt-5">Your Monthly Payments</h1>
-                </div>
-                <div class="row justify-content-center pt-5 pb-5">
-                    <h1 id="monthlypayment">$0.00</h1>
-                </div>
                 <div class="row">
-                    <div class="col ml-4">
-                        <h3>Total Principal</h3>
-                    </div>
-                    <div class="col">
-                        <div class="row justify-content-end pr-5">
-                            <h3 id="totalprincipal">$0.00</h3>
+                    <div id="m1" class="col">
+                        <div id="m2" class="row justify-content-center mt-5">
+                            <h1 class="mt-5">Your Monthly Payments</h1>
+                        </div>
+                        <div class="row justify-content-center pt-5 pb-5">
+                            <h1 id="monthlypayment">$0.00</h1>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col ml-4">
-                        <h3>Total Interest</h3>
-                    </div>
                     <div class="col">
-                        <div class="row justify-content-end pr-5">
-                            <h3 id="totalinterest">$0.00</h3>
+                        <div class="row">
+                            <div class="col ml-4">
+                                <h3>Total Principal</h3>
+                            </div>
+                            <div class="col">
+                                <div class="row justify-content-end pr-5">
+                                    <h3 id="totalprincipal">$0.00</h3>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col ml-4">
-                        <h3>Total Cost</h3>
-                    </div>
-                    <div class="col">
-                        <div class="row justify-content-end pr-5">
-                            <h3 id="totalcost" class="mb-5">$0.00</h3>
+                        <div class="row">
+                            <div class="col ml-4">
+                                <h3>Total Interest</h3>
+                            </div>
+                            <div class="col">
+                                <div class="row justify-content-end pr-5">
+                                    <h3 id="totalinterest">$0.00</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col ml-4">
+                                <h3>Total Cost</h3>
+                            </div>
+                            <div class="col">
+                                <div class="row justify-content-end pr-5">
+                                    <h3 id="totalcost" class="mb-5">$0.00</h3>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
