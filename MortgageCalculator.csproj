@@ -75,6 +75,7 @@
     <Content Include="Assets\Team 6 Favicon Gold.ico" />
     <Content Include="Assets\Team 6 Logo.png" />
     <Content Include="Code.html" />
+    <Content Include="Content\navbar.css" />
     <Content Include="Content\styles.css" />
     <Content Include="Index.html" />
     <Content Include="prism.css" />
@@ -82,6 +83,7 @@
     <Content Include="Scripts\accounting.min.js" />
     <Content Include="Scripts\CustomJS.js" />
     <Content Include="Scripts\InputFormatting.js" />
+    <Content Include="Scripts\togglenav.js" />
     <Content Include="Solve.html" />
     <Content Include="Web.config" />
   </ItemGroup>

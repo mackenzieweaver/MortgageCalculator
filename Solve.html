@@ -14,10 +14,12 @@
     <link href="prism.css" rel="stylesheet" />
     <!-- Favicon -->
     <link rel="icon" href="/Assets/favicon.ico" />
+    <!-- Nav bar css -->
+    <link href="Content/navbar.css" rel="stylesheet" />
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="mynav" class="navbar navbar-expand-lg bg-dark navbar-dark static-top">
+    <!--<nav id="mynav" class="navbar navbar-expand-lg bg-dark navbar-dark static-top">
         <div class="container">
             <a class="navbar-brand" href="/Index.html">CSW Loans</a>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -49,6 +51,35 @@
                 </ul>
             </div>
         </div>
+    </nav>-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark static-top">
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="#">CSW Loans</a>
+        <!-- Collapse button -->
+        <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
+                aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="animated-icon3"><span></span><span></span><span></span></div>
+        </button>
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent22">
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="Index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Solve.html">Solution</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Code.html">Code</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/mackenzieweaver/MortgageCalculator" target="_blank">Github</a>
+                </li>
+            </ul>
+            <!-- Links -->
+        </div>
+        <!-- Collapsible content -->
     </nav>
     <header class="py-5 mb-5">
         <div class="container h-100">
@@ -163,5 +194,7 @@
     <script src="Scripts/InputFormatting.js"></script>
     <!-- Prism -->
     <script src="prism.js"></script>
+    <!-- Custom JS toggles nav -->
+    <script src="Scripts/togglenav.js"></script>
 </body>
 </html>

@@ -21,6 +21,7 @@ body {
 #mynav {
     background-color: #343a40 !important;
     color: var(--main-color);
+    min-height: 72px;
 }
 
 /* ==================== NAV BAR */
@@ -62,7 +63,7 @@ p.card-text {
 }
 
 .table-dark td, .table-dark th, .table-dark thead th {
-    border-bottom: solid 1px rgba(206,169,53,.5)!important;
+    border-bottom: solid 1px rgba(206,169,53,.5) !important;
 }
 
 .card-text {
@@ -73,7 +74,7 @@ hr {
     border-top: 1px solid rgba(242,177,45,.9);
 }
 
-code {    
+code {
     color: rgba(242,177,45,.9);
 }
 
@@ -81,9 +82,9 @@ code {
     color: rgba(242,177,45,.9);
 }
 
-.contactlink:hover {
-    color: rgba(242,177,45,.5);
-}
+    .contactlink:hover {
+        color: rgba(242,177,45,.5);
+    }
 
 #contact {
     display: flex;
@@ -95,34 +96,43 @@ code {
         display: flex;
         flex-direction: column;
     }
+
     #contactdanny {
         margin-top: -15px !important;
         padding-top: 0;
         margin-bottom: 24px;
     }
+
     #contactjosh {
         margin-bottom: 24px;
     }
+
     #contactmack {
         padding-left: 48px;
         margin-bottom: -15px;
     }
+
     #inout {
         flex-direction: column;
         margin: 5px;
     }
+
     #inputs {
         margin-bottom: 48px;
     }
+
     h1 {
         font-size: 24px !important;
     }
+
     h3 {
         font-size: 16px;
     }
+
     #calcbtn {
         margin-top: 0 !important;
     }
+
     #cbp {
         margin-top: 0 !important;
     }
