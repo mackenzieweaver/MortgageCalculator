@@ -67,6 +67,17 @@ input {
     box-shadow: 0 0 16px 0px rgba(206, 169, 53, 0.75);
 }
 
+.card-link {
+    color: white;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 #inputs, #outputs, .card {
     /*border: 1px solid var(--sec-color);*/
     box-shadow: 0 0 16px 0px rgba(206, 169, 53, 0.25);
