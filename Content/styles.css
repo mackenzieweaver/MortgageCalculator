@@ -50,6 +50,10 @@ input {
     margin-right: 48px;
 }
 
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 #inputs, #outputs, .card {
     /*border: 1px solid var(--sec-color);*/
     box-shadow: 0 0 16px 0px rgba(206, 169, 53, 0.25);
@@ -157,7 +161,7 @@ code {
     .slider:hover {
         opacity: 1;
     }
-    /*Slider Button*/
+    /*Slider Thumb*/
     .slider::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
@@ -166,7 +170,7 @@ code {
         background: #ffc107;
         cursor: pointer;
     }
-    /*Not sure what this does*/
+    /*Not sure what this does, for Mozilla/FF?*/
     /*.slider::-moz-range-thumb {
         width: 25px;
         height: 25px;
