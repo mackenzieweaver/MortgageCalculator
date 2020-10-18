@@ -11,7 +11,7 @@
     <!-- Custom CSS -->
     <link href="Content/styles.css" rel="stylesheet" />
     <!-- Prism -->
-    <link href="prism.css" rel="stylesheet" />
+    <link href="Content/twilightprism.css" rel="stylesheet" />
     <!-- Favicon -->
     <link rel="icon" href="/Assets/favicon.ico" />
     <!-- Nav bar css -->
@@ -100,8 +100,13 @@
 <pre>
 <code class="language-js line-numbers">// Calculate calls all other functions
 function Calculate(loan, term, rate) {
+    // Rate includes decimal
+    rate = parseFloat(rate);
     loan = parseInt(loan.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
     const table = document.getElementById("tbody");
+    if (isNaN(loan)) {
+        return;
+    }
     // If there's already a table, remove it
     while (table.firstChild) {
         table.removeChild(table.firstChild);
@@ -110,12 +115,20 @@ function Calculate(loan, term, rate) {
     let precision = 2;
     // Total Principal = loan
     document.getElementById("totalprincipal").innerHTML = `${accounting.formatMoney(loan)}`;
-    //Total Monthly Payment = (amount loaned) * (rate/1200) / (1 – (1 + rate/1200)(-Number of Months) )
-    //Equation 1
-    let totalMonthlyPayment = (loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));
+    console.log(rate);
+    console.log(typeof (rate));
+    let totalMonthlyPayment;
+    if (isNaN(rate)) {
+        rate = 0;
+        totalMonthlyPayment = loan / term;
+    } else {
+        //Total Monthly Payment = (amount loaned) * (rate/1200) / (1 – (1 + rate/1200)(-Number of Months) )
+        // Equation 1
+        totalMonthlyPayment = (loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));
+    }
     document.getElementById("monthlypayment").innerHTML = `${accounting.formatMoney(totalMonthlyPayment.toFixed(precision))}`;
     // before the very first month equals the amount of the loan
-    //Equation 2
+    // Equation 2
     let remainingBalance = loan;
     // Interest starting at zero
     let totalInterest = 0;
@@ -158,6 +171,39 @@ function Calculate(loan, term, rate) {
     let totalCost = parseInt(loan) + totalInterest;
     document.getElementById("totalinterest").innerHTML = `${accounting.formatMoney(totalInterest.toFixed(precision))}`;
     document.getElementById("totalcost").innerHTML = `${accounting.formatMoney(totalCost)}`;
+}
+// Rate accepts decimals up to 3 places
+function validateRate(rate) {
+    let char = rate.charAt(rate.length - 1);
+    if (char == '.') {
+    rate = rate.split('');
+    rate.splice(rate.length - 1, 1);
+    if (rate.indexOf(char) < 0) {
+    rate.splice(rate.length, 0, char);
+    }
+    rate = rate.join('');
+    document.getElementById("rate").value = rate;
+    }
+    if ((isNaN(parseInt(char)) && char != '.') || rate.length > 5) {
+    rate = rate.split('');
+    rate.splice(rate.length - 1, 1);
+    rate = rate.join('');
+    document.getElementById("rate").value = rate;
+    }
+}
+//Reset button
+function Reset() {
+    document.getElementById("loan").value = "$100,000";
+    document.getElementById("rate").value = "3.92";
+    document.getElementById("term").value = "360";
+    document.getElementById("monthlypayment").innerText = "$0.00";
+    document.getElementById("totalprincipal").innerText  = "$0.00";
+    document.getElementById("totalinterest").innerText  = "$0.00";
+    document.getElementById("totalcost").innerText  = "$0.00";
+    let table = document.getElementById("tbody");
+    // If there's already a table, remove it
+    while (table.firstChild) {
+    table.removeChild(table.firstChild);
 }</code>
 </pre>
             </div>
@@ -172,7 +218,7 @@ function Calculate(loan, term, rate) {
     <script src="Scripts/accounting.min.js"></script>
     <script src="Scripts/InputFormatting.js"></script>
     <!-- Prism -->
-    <script src="prism.js"></script>
+    <script src="Scripts/twilightprism.js"></script>
     <!-- Custom JS toggles nav -->
     <script src="Scripts/togglenav.js"></script>
 </body>
