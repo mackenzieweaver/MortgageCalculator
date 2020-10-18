@@ -50,8 +50,19 @@ input {
     margin-right: 48px;
 }
 
+/*Cards*/
 .card:hover {
     box-shadow: 0 0 16px 0px rgba(206, 169, 53, 0.75);
+}
+
+.card-link {
+    color: white;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    color: white;
+    text-decoration: none;
 }
 
 #inputs, #outputs, .card {
