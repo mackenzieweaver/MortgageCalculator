@@ -61,8 +61,8 @@
         </div>
     </header>
     <div class="container">
-        <div class="row mt-5">
-            <div id="inputs" class="col-5 mr-3">
+        <div id="inout" class="row mt-5">
+            <div id="inputs" class="col">
                 <div class="row mb-3 mt-5">
                     <div class="col ml-4">
                         Loan Amount:
@@ -87,12 +87,12 @@
                         <input type="number" id="term" value="360" min="1" max="360" oninput="validity.valid||(value='');" />
                     </div>
                 </div>
-                <div class="row mt-5 mr-4 pt-5 justify-content-end">
+                <div id="cbp" class="row mt-5 mr-4 pt-5 justify-content-end">
                     <button id="calcbtn" class="mt-5 btn btn-warning" onclick="Calculate(document.getElementById('loan').value,document.getElementById('term').value,document.getElementById('rate').value)">
                         Calculate
                     </button>
                 </div>
-                <div class="row mr-4 mb-4 justify-content-end">
+                <div class="row mr-4 mb-5 justify-content-end">
                     <button id="resetbtn" class="btn btn-danger mt-3" onclick="Reset()">
                         Reset
                     </button>

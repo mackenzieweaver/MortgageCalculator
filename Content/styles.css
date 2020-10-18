@@ -16,10 +16,14 @@ body {
     color: white;
 }
 
+/* ==================== NAV BAR */
+
 #mynav {
     background-color: #343a40 !important;
     color: var(--main-color);
 }
+
+/* ==================== NAV BAR */
 
 header {
     background-color: rgba(242,177,45, 1.0) !important;
@@ -39,6 +43,10 @@ input {
 
 #dropdownMenuButton {
     color: #949d9a;
+}
+
+#inputs {
+    margin-right: 48px;
 }
 
 #inputs, #outputs, .card {
@@ -75,4 +83,47 @@ code {
 
 .contactlink:hover {
     color: rgba(242,177,45,.5);
+}
+
+#contact {
+    display: flex;
+    flex-direction: row;
+}
+
+@media only screen and (max-width: 1000px) {
+    #contact {
+        display: flex;
+        flex-direction: column;
+    }
+    #contactdanny {
+        margin-top: -15px !important;
+        padding-top: 0;
+        margin-bottom: 24px;
+    }
+    #contactjosh {
+        margin-bottom: 24px;
+    }
+    #contactmack {
+        padding-left: 48px;
+        margin-bottom: -15px;
+    }
+    #inout {
+        flex-direction: column;
+        margin: 5px;
+    }
+    #inputs {
+        margin-bottom: 48px;
+    }
+    h1 {
+        font-size: 24px !important;
+    }
+    h3 {
+        font-size: 16px;
+    }
+    #calcbtn {
+        margin-top: 0 !important;
+    }
+    #cbp {
+        margin-top: 0 !important;
+    }
 }

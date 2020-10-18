@@ -15,7 +15,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav id="mynav" class="navbar navbar-expand-lg bg-dark navbar-dark static-top">
+    <nav id="mynav" class="navbar navbar-expand-sm bg-dark navbar-dark static-top">
         <div class="container">
             <a class="navbar-brand" href="/Index.html">CSW Loans </a>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -48,11 +48,13 @@
             </div>
         </div>
     </nav>
+
+
     <!-- Header -->
     <header class="py-5 mb-5">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-lg-12">
+        <div class="container w-100">
+            <div class="row w-100 align-items-center">
+                <div class="col-12">
                     <h1 class="display-4 mt-5 mb-2">Loan Calculator</h1>
                     <p class="lead mb-5">Individuals and Businesses use loans make large purchases without paying the entire cost up front. With our intuitive loan calculating app you will be able to accurately predict what each of your monthly payments will be for the duration of your payment term.</p>
                 </div>
@@ -64,7 +66,7 @@
         <div class="row">
             <div class="col-12 mb-5">
                 <h2>Formulas Used</h2>
-                <hr class="mb-5" >
+                <hr class="mb-5">
                 <p>1.) Total Monthly Payment = (amount loaned) * (rate/1200) / (1 – (1 + rate/1200)(-Number of Months))</p>
                 <h6><code>let totalMonthlyPayment = (loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));</code></h6>
                 <br />
@@ -125,16 +127,16 @@
                 <hr>
             </div>
         </div>
-        <div class="row">
-            <div class="col ml-5">
+        <div id="contact" class="row">
+            <div id="contactdanny" class="col pl-5">
                 <p><strong>Mark Danny Carroll</strong> - Lead Designer</p>
                 <a class="contactlink" href="https://www.linkedin.com/in/mark-danny-carroll/" target="_blank">linkedin.com/in/mark-danny-carroll/</a>
             </div>
-            <div class="col ml-5">
+            <div id="contactjosh" class="col pl-5">
                 <p><strong>Josh Scott</strong> - Lead Programmer</p>
                 <a class="contactlink" href="https://www.linkedin.com/in/joshgreatscott/" target="_blank">linkedin.com/in/joshgreatscott/</a>
             </div>
-            <div class="col">
+            <div id="contactmack" class="col">
                 <p><strong>Mackenzie Weaver</strong> - Project Manager</p>
                 <a class="contactlink" href="https://www.linkedin.com/in/mackenzie-weaver/" target="_blank">linkedin.com/in/mackenzie-weaver</a>
             </div>
