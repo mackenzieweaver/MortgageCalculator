@@ -63,6 +63,7 @@ input {
 .card-link:hover {
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 #inputs, #outputs, .card {
