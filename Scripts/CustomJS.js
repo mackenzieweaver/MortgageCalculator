@@ -17,7 +17,7 @@ function Calculate(loan, term, rate) {
     // Total Principal = loan
     document.getElementById("totalprincipal").innerHTML = `${accounting.formatMoney(loan)}`;
     let totalMonthlyPayment;
-    if (isNaN(rate)) {
+    if (isNaN(rate) || 0) {
         rate = 0;
         totalMonthlyPayment = loan / term;
     } else {
