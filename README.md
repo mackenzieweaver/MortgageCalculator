@@ -68,7 +68,7 @@ Contributions are what make the open source community such an amazing place to b
 
 [Mark Danny Carroll](https://www.linkedin.com/in/mark-danny-carroll/)
 
-Project Link: [CSW Mortgage](https://csw-loan-calc.netlify.app/)
+Live: [CSW Loans](https://csw-loan-calc.netlify.app/)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
