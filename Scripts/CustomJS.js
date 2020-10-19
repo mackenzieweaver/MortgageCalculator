@@ -43,6 +43,10 @@ function Calculate(loan, term, rate) {
             cell.appendChild(text);
         }
     }
+    let myLabels = [];
+    let myPrincipalPayments = [];
+    let myInterestPayments = [];
+    let thePayment = [];
     for (let i = 1; i <= term; i++) {
         //Equation 3
         let interestPayment = remainingBalance * (rate / 1200);
@@ -78,10 +82,59 @@ function Calculate(loan, term, rate) {
         cell = row.insertCell();
         text = document.createTextNode(accounting.formatMoney(remainingBalance.toFixed(precision)));
         cell.appendChild(text);
+
+        myPrincipalPayments.push(principalPayment);
+        myInterestPayments.push(interestPayment)
+        myLabels.push(i);
+        thePayment.push(totalMonthlyPayment);
     }
     let totalCost = parseInt(loan) + totalInterest;
     document.getElementById("totalinterest").innerHTML = `${accounting.formatMoney(totalInterest.toFixed(precision))}`;
     document.getElementById("totalcost").innerHTML = `${accounting.formatMoney(totalCost)}`;
+
+    // Chart Creation
+    var ctx = document.getElementById('myChart');
+    ctx.style.display = "block";
+    var myChart = new Chart(ctx, {
+        type: 'line',        
+        data: {
+            labels: myLabels,
+            datasets: [{
+                data: myPrincipalPayments,
+                label: "Principal",
+                borderColor: [
+                    'rgba(255, 255, 255, 1)'
+                ],
+                borderWidth: 1
+                },
+                {
+                    data: myInterestPayments,
+                    label: "Interest",
+                    borderColor: [
+                        'rgba(0, 0, 0, 1)'
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    data: thePayment,
+                    label: "Monthly Payment",
+                    borderColor: [
+                        'rgba(242, 177, 45, 1)'
+                    ],
+                    borderWidth: 1
+                }
+            ]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+        }
+    });
 }
 
 function DownPayment(totalPrice, downPayment, loanAmount) {
@@ -135,6 +188,7 @@ function validateRate(rate) {
 
 //Reset button
 function Reset() {
+    document.getElementById('myChart').style.display = "none";
     document.getElementById("totalPrice").value = "$125,000";
     document.getElementById("downPayment").value = "$25,000";
     document.getElementById("loan").value = "$100,000";

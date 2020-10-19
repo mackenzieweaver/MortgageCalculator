@@ -159,8 +159,8 @@
             <div id="outputs" class="col">
                 <div class="row">
                     <div id="m1" class="col">
-                        <div id="m2" class="row justify-content-center mt-5">
-                            <h1 class="mt-5">Your Monthly Payments</h1>
+                        <div id="m2" class="row justify-content-center mt-4">
+                            <h1>Your Monthly Payments</h1>
                         </div>
                         <div class="row justify-content-center pt-5 pb-5">
                             <h1 id="monthlypayment">$0.00</h1>
@@ -201,10 +201,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
+                <div id="chart" class="row justify-content-center chart-container mb-4 ml-1 mr-1">
+                    <canvas id="myChart" height="400" width="500" style="display: none"></canvas>
+                </div>
+            </div>            
         </div>
         <div id="tablerow" class="row">
-            <table class="table table-responsive-lg table-dark table-striped mt-5">
+            <table class="table table-responsive-lg table-dark table-striped mt-4">
                 <thead>
                     <tr>
                         <th scope="col">Month</th>
@@ -238,11 +241,14 @@
     <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="//stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <!-- Chart JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
     <!-- Custom JS -->
     <script src="Scripts/CustomJS.js"></script>
     <script src="Scripts/accounting.min.js"></script>
     <script src="Scripts/InputFormatting.js"></script>
     <!-- Custom JS toggles nav -->
     <script src="Scripts/togglenav.js"></script>
+
 </body>
 </html>
