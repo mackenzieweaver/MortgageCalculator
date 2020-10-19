@@ -11,6 +11,7 @@
 * [Contributing](#contributing)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
+* [Check It Out](#check-it-out)
 
 ## About The Project
 
@@ -68,8 +69,6 @@ Contributions are what make the open source community such an amazing place to b
 
 [Mark Danny Carroll](https://www.linkedin.com/in/mark-danny-carroll/)
 
-Live: [CSW Loans](https://csw-loan-calc.netlify.app/)
-
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 * [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
@@ -77,3 +76,7 @@ Live: [CSW Loans](https://csw-loan-calc.netlify.app/)
 * [accounting.js](http://openexchangerates.github.io/accounting.js/)
 * [Currency Format Input Field](https://codepen.io/559wade/pen/LRzEjj?editors=1010)
 * [Coder Foundry Mortgage Challenge](https://github.com/mackenzieweaver/MortgageCalculator/blob/main/Coding%20Challenge%20-%20Mortgage%20Loan%20Calculator.pdf)
+
+## Check it out
+
+Live: [CSW Loans](https://csw-loan-calc.netlify.app/)
