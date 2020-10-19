@@ -4,7 +4,7 @@ function Calculate(loan, term, rate) {
     rate = parseFloat(rate);
     loan = parseInt(loan.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
     const table = document.getElementById("tbody");
-    
+
     if (isNaN(loan)) {
         return;
     }
@@ -25,13 +25,24 @@ function Calculate(loan, term, rate) {
         // Equation 1
         totalMonthlyPayment = (loan * (rate / 1200)) / (1 - Math.pow((1 + rate / 1200), -Math.abs(term)));
     }
-    
+
     document.getElementById("monthlypayment").innerHTML = `${accounting.formatMoney(totalMonthlyPayment.toFixed(precision))}`;
     // before the very first month equals the amount of the loan
     // Equation 2
     let remainingBalance = loan;
     // Interest starting at zero 
     let totalInterest = 0;
+    if (isNaN(loan) || loan == 0) {
+        term = 0;
+        let row = table.insertRow();
+        for (let i = 0; i < 6; i++) {
+            row.setAttribute("scope", "row");
+            //the table has a Header, Tbody, Row, Cell, and TextNode
+            let cell = row.insertCell();
+            let text = document.createTextNode("$0.00");
+            cell.appendChild(text);
+        }
+    }
     for (let i = 1; i <= term; i++) {
         //Equation 3
         let interestPayment = remainingBalance * (rate / 1200);
@@ -98,7 +109,7 @@ function DownPayment(totalPrice, downPayment, loanAmount) {
     }
     // Change Loan Amount Input Value
     loanAmount = accounting.formatMoney(loanAmount.toFixed(0));
-    loanAmount = loanAmount.split('').splice(0, loanAmount.length-3).join("");
+    loanAmount = loanAmount.split('').splice(0, loanAmount.length - 3).join("");
     document.getElementById("loan").value = `${loanAmount}`;
 }
 
@@ -130,13 +141,46 @@ function Reset() {
     document.getElementById("rate").value = "3.92";
     document.getElementById("term").value = "360";
     document.getElementById("monthlypayment").innerText = "$0.00";
-    document.getElementById("totalprincipal").innerText  = "$0.00";
-    document.getElementById("totalinterest").innerText  = "$0.00";
-    document.getElementById("totalcost").innerText  = "$0.00";
-
+    document.getElementById("totalprincipal").innerText = "$0.00";
+    document.getElementById("totalinterest").innerText = "$0.00";
+    document.getElementById("totalcost").innerText = "$0.00";
     let table = document.getElementById("tbody");
     // If there's already a table, remove it
     while (table.firstChild) {
         table.removeChild(table.firstChild);
     }
+    let row = table.insertRow();
+    for (let i = 0; i < 6; i++) {
+        row.setAttribute("scope", "row");
+        //the table has a Header, Tbody, Row, Cell, and TextNode
+        let cell = row.insertCell();
+        let text = document.createTextNode("$0.00");
+        cell.appendChild(text);
+    }
 }
+
+document.getElementById("downPayment").addEventListener("focusout", function () {
+    // get strings
+    let totalPrice = document.getElementById('totalPrice').value;
+    let downPayment = document.getElementById('downPayment').value;
+    let loanAmount = document.getElementById('loan').value;
+    // get nums
+    downPayment = parseInt(downPayment.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
+    totalPrice = parseInt(totalPrice.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
+    loanAmount = parseInt(loanAmount.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
+
+    if (downPayment < 10 || isNaN(downPayment)) {
+        downPayment = Math.floor(totalPrice * 0.03);
+        downPayment = accounting.formatMoney(downPayment.toFixed(0));
+        downPayment = downPayment.split('').splice(0, downPayment.length - 3).join("");
+        document.getElementById("downPayment").value = `${downPayment}`;
+    }
+    downPayment = document.getElementById('downPayment').value;
+    downPayment = parseInt(downPayment.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
+    loanAmount = totalPrice - downPayment;
+
+    // Change Loan Amount Input Value
+    loanAmount = accounting.formatMoney(loanAmount.toFixed(0));
+    loanAmount = loanAmount.split('').splice(0, loanAmount.length - 3).join("");
+    document.getElementById("loan").value = `${loanAmount}`;
+});
