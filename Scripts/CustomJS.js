@@ -16,7 +16,7 @@
             window.localStorage.setItem("term", "60");
             break;
     }
-    location.replace("https://localhost:44382/Solve.html")
+    location.replace("https://csw-loan-calc.netlify.app//Solve.html")
 }
 
 function CheckHCR() {
