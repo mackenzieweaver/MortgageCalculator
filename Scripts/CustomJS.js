@@ -1,4 +1,34 @@
-﻿// Calculate calls all other functions
+﻿function HCR(num) {
+    switch (num) {
+        case 1:
+            window.localStorage.setItem("loan", "$100,000");
+            window.localStorage.setItem("rate", "3.92");
+            window.localStorage.setItem("term", "360");
+            break;
+        case 2:
+            window.localStorage.setItem("loan", "$50,000");
+            window.localStorage.setItem("rate", "4.37");
+            window.localStorage.setItem("term", "72");
+            break;
+        case 3:
+            window.localStorage.setItem("loan", "$10,000");
+            window.localStorage.setItem("rate", "6.99");
+            window.localStorage.setItem("term", "60");
+            break;
+    }
+    location.replace("https://localhost:44382/Solve.html")
+}
+
+function CheckHCR() {
+    if (window.localStorage.getItem("loan")) {
+        document.getElementById("loan").value = window.localStorage.getItem("loan");
+        document.getElementById("rate").value = window.localStorage.getItem("rate");
+        document.getElementById("term").value = window.localStorage.getItem("term");
+        window.localStorage.clear();
+    }
+}
+
+// Calculate calls all other functions
 function Calculate(loan, term, rate) {
     // Rate includes decimal
     rate = parseFloat(rate);
@@ -213,28 +243,30 @@ function Reset() {
     }
 }
 
-document.getElementById("downPayment").addEventListener("focusout", function () {
-    // get strings
-    let totalPrice = document.getElementById('totalPrice').value;
-    let downPayment = document.getElementById('downPayment').value;
-    let loanAmount = document.getElementById('loan').value;
-    // get nums
-    downPayment = parseInt(downPayment.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
-    totalPrice = parseInt(totalPrice.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
-    loanAmount = parseInt(loanAmount.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
+if (window.location.href == "https://localhost:44382/Solve.html") {
+    document.getElementById("downPayment").addEventListener("focusout", function () {
+        // get strings
+        let totalPrice = document.getElementById('totalPrice').value;
+        let downPayment = document.getElementById('downPayment').value;
+        let loanAmount = document.getElementById('loan').value;
+        // get nums
+        downPayment = parseInt(downPayment.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
+        totalPrice = parseInt(totalPrice.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
+        loanAmount = parseInt(loanAmount.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
 
-    if (downPayment < 10 || isNaN(downPayment)) {
-        downPayment = Math.floor(totalPrice * 0.03);
-        downPayment = accounting.formatMoney(downPayment.toFixed(0));
-        downPayment = downPayment.split('').splice(0, downPayment.length - 3).join("");
-        document.getElementById("downPayment").value = `${downPayment}`;
-    }
-    downPayment = document.getElementById('downPayment').value;
-    downPayment = parseInt(downPayment.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
-    loanAmount = totalPrice - downPayment;
+        if (downPayment < 10 || isNaN(downPayment)) {
+            downPayment = Math.floor(totalPrice * 0.03);
+            downPayment = accounting.formatMoney(downPayment.toFixed(0));
+            downPayment = downPayment.split('').splice(0, downPayment.length - 3).join("");
+            document.getElementById("downPayment").value = `${downPayment}`;
+        }
+        downPayment = document.getElementById('downPayment').value;
+        downPayment = parseInt(downPayment.replace(/$/, '').replace(/,/g, '').replace(/./, ''));
+        loanAmount = totalPrice - downPayment;
 
-    // Change Loan Amount Input Value
-    loanAmount = accounting.formatMoney(loanAmount.toFixed(0));
-    loanAmount = loanAmount.split('').splice(0, loanAmount.length - 3).join("");
-    document.getElementById("loan").value = `${loanAmount}`;
-});
+        // Change Loan Amount Input Value
+        loanAmount = accounting.formatMoney(loanAmount.toFixed(0));
+        loanAmount = loanAmount.split('').splice(0, loanAmount.length - 3).join("");
+        document.getElementById("loan").value = `${loanAmount}`;
+    });
+}
